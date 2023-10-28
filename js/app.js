@@ -62,7 +62,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
        //console.log(multiplyABC);
    let sumString = `${a} and ${b} and ${c} sum to ${sumABC[0]}.`;
    let multiplyString = `The product of ${a} and ${b} and ${c} is ${multiplyABC[0]}.`;
-    console.log(sumString);
+   // console.log(sumString);
     return [ sumABC[0], multiplyABC[0], sumString, multiplyString];
 }
 //sumAndMultiply(4,7,5)
@@ -87,11 +87,21 @@ let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
 
+    let sumOfTestArray = 0;
+    //console.log(sumOfTestArray);
+    for (let i = 0; i < sumArr.length; i++){
+        sumOfTestArray = sum(sumOfTestArray, sumArr[i])[0];
+    }
+
+    let arrString = sumArr.join(', ');
+    //console.log(arrString)
+    let answerString = `${arrString} was passed in as an array of numbers, and ${sumOfTestArray} is their sum.`;
+    return [sumOfTestArray, answerString];
 }
+// No idea why this won't PASS
 
 // Here is the test for sumArray(); uncomment it to run it
-
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
