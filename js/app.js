@@ -118,10 +118,21 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
 
+    //ChatGPT: This code first calculates the product of the numbers in the array without using the * operator and then formats the result string as specified in the problem description.
+    let product = 1;
+    
+    for (let i = 0; i < multArr.length; i++) {
+        product = multiply(product, multArr[i])[0];
+    }
+
+    const numbersString = multArr.join(',');
+    const resultString = `The numbers ${numbersString} have a product of ${product}.`;
+
+    return [product, resultString];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
